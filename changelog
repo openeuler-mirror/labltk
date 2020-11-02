@@ -1,0 +1,131 @@
+2020-08-25:
+-----------
+* Release labltk-8.06.9 for ocaml 4.11
+* search for X11 headers in /usr/local/include if needed (freebsd)
+
+2020-08-24:
+-----------
+* fix config/auto-aux/hasgot for clang 12 (MacOS)
+* update ocamlbrowser to ocaml 4.11
+
+2020-01-13:
+-----------
+* Release labltk-8.06.8 for ocaml 4.10
+* update ocamlbrowser to ocaml 4.10
+* fix again file selection
+
+2019-11-20:
+-----------
+* fix filtering in file selection (OCamlBrowser)
+* lookup source files for Stdlib__* (OCamlBrowser)
+
+2019-09-23:
+-----------
+* Release labltk-8.06.7 for ocaml 4.09
+* ocaml 4.08/4.09 compatibility: use OCAMLC_CFLAGS and Stdlib
+* include auxlib-in-META
+* default to -tk-no-x11 in configure (new -tk-x11 option available)
+* add fallback to -I/usr/X11/include and -L/usr/X11/lib
+
+2019-05-31:
+-----------
+* Release labltk-8.06.6 for ocaml 4.08
+* Have configure use (GNU) make rather than grep to read
+  ocaml/Makefile.config, due to change in ocaml 4.08
+* Add "library" target, to avoid compiling ocamlbrowser
+* Update ocamlbrowser for ocaml 4.08
+
+2018-12-20:
+-----------
+* Fix browser for module aliases and polymorphic variants
+
+2018-07-11:
+-----------
+* Release labltk-8.06.5, for ocaml 4.07
+
+2018-06-26:
+-----------
+* Update browser for ocaml 4.07
+
+2017-10-30:
+-----------
+* Release labltk-8.06.4, for ocaml 4.06
+
+2017-09-19:
+-----------
+* prepare for 4.06: -safe-string transition and browser updates
+
+2017-07-19:
+-----------
+* Release labltk-8.06.3, for ocaml 4.05
+* Various fixes for ocaml 4.05 (merge debian patches by Stephane Glondu)
+
+2017-05-15:
+-----------
+* Fix configuration and Makefile for OCaml 4.06
+
+2016-08-13:
+-----------
+* suppress gcc warning about unused variable (Damien Doligez)
+
+2016-08-10:
+-----------
+* Release labltk-8.06.2, for ocaml 4.04
+
+2016-08-02:
+-----------
+* update browser for 4.04
+
+2016-04-28:
+-----------
+* Fix warning 52
+
+2016-04-27:
+-----------
+* Release labltk-8.06.1
+* Adapt to ocaml 4.03
+* Fix const qualifiers in C code
+
+2014-12-22:
+-----------
+* Adapt to changes in trunk
+
+2014-09-18:
+-----------
+* Release labltk-8.06.0
+* Improve configuration, and allow using findlib for installation
+* Fix PR#1423: Tkvars.version() call gives Fatal error
+* Fix PR#1411: some void-returning functions are wrongly declared with CAMLprim
+* Fix PR#1412: wrong declaration for argument of camltk_tk_mainloop
+
+2014-08-21:
+-----------
+* Add command line flags in ocamlbrowser for -safe-string and -short-paths.
+
+2014-05-22:
+-----------
+* Update for 4.02.
+
+2013-12-17:
+-----------
+* Add INSTALL file.
+* Update for ocaml trunk.
+* Modify tkcompiler to allow widgets with name containing special characters.
+
+2005-12-20:
+-----------
+* Add Protocol.do_one_event and Protocol.do_pending.
+
+2002-05-03:
+-----------
+General Changes
+* Merging CamlTk and LablTk API interfaces
+* Activate and Deactivate Events are added
+* Virtual events support
+* Added UTF conversion
+
+Incompatibilities between the previous camltk/labltk versions
+* CamlTk's bind_tag and bind_class superseded tag_bind and class_bind.
+* added optional arguments to some functions of CamlTk.
+* The library name libfrx and libjpf are changed to frxlib and jpflib
+  respectively, to avoid the library name confusion.

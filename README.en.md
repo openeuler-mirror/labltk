@@ -1,7 +1,15 @@
 # labltk
 
 #### Description
-Tcl/Tk interface for OCaml
+LablTk is an OCaml interface to the Tcl/Tk GUI framework. 
+It allows to develop GUI applications in a speedy and type safe way.
+It was derived from the CamlTk project, and a legacy CamlTk API is included. 
+The OCamlBrowser library viewer is also part ofthis project.
+
+LablTk provides a strongly-typed, yet comfortable, interface to Tcl/Tk's widgets through OCaml's rich type system. 
+Most widgets and methods are available, along with many examples.
+
+The toplevel can be used for interactive development.
 
 #### Software Architecture
 Software architecture description
