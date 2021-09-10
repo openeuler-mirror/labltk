@@ -1,0 +1,12 @@
+diff -Nur labltk-labltk-8.06.4/support/Makefile labltk.new/support/Makefile
+--- labltk-labltk-8.06.4/support/Makefile	2017-10-30 17:17:52.000000000 +0800
++++ labltk.new/support/Makefile	2021-09-09 17:19:14.856798739 +0800
+@@ -28,7 +28,7 @@
+       cltkFile.$(O) cltkMain.$(O) cltkMisc.$(O) cltkTimer.$(O) \
+       cltkVar.$(O) cltkWait.$(O) cltkImg.$(O)
+ 
+-CCFLAGS=-I$(LIBDIR)/caml $(TK_DEFS) $(SHAREDCCCOMPOPTS) -g
++CCFLAGS=-I$(LIBDIR)/caml $(TK_DEFS) $(SHAREDCCCOMPOPTS) -g ${RPM_OPT_FLAGS}
+ 
+ COMPFLAGS=
+ THFLAGS=-I +threads -I vmthreads
