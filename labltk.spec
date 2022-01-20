@@ -4,15 +4,14 @@
 %global native_compiler 0
 %endif
 Name:                ocaml-labltk
-Version:             8.06.4
+Version:             8.06.11
 Release:             1
 Summary:             Tcl/Tk interface for OCaml
 License:             LGPLv2+ with exceptions
 URL:                 https://github.com/garrigue/labltk 
-Source0:             https://github.com/garrigue/labltk/archive/labltk-%{version}/labltk-%{version}.tar.gz
+Source0:             https://github.com/garrigue/labltk/archive/%{version}/labltk-%{version}.tar.gz
 # This adds debugging (-g) everywhere.
-Patch1:              labltk-8.06.0-enable-debugging.patch
-Patch2:              labltk-8.06.4-enable-more-debugging.patch
+Patch1:              labltk-8.06.11-enable-debugging.patch
 BuildRequires:       ocaml tcl-devel tk-devel
 %description
 labltk or mlTk is a library for interfacing OCaml with the scripting
@@ -27,9 +26,8 @@ language Tcl/Tk (all versions since 8.0.3, but no betas).
 This package contains the development files.
 
 %prep
-%setup -q -n labltk-labltk-%{version}
+%setup -q -n labltk-%{version}
 %patch1 -p1
-%patch2 -p1
 find -name .gitignore -delete
 find -type f | xargs sed -i -e 's/-warn-error/-w/g'
 
@@ -81,5 +79,8 @@ install -m 0644 camltk/*.o $RPM_BUILD_ROOT%{_libdir}/ocaml/labltk
 %{_libdir}/ocaml/labltk/*.mli
 
 %changelog
+* Thu Jan 20 2022 liyanan <liyanan32@huawei.com> -8.06.11-1
+- update to 8.06.11
+
 * Fri Oct 9 2020 maminjie <maminjie1@huawei.com> - 8.06.4-1
 - package init
