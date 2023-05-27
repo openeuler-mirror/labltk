@@ -1,0 +1,12 @@
+diff -ur labltk-8.06.11/support/Makefile labltk-8.06.11/support/Makefile
+--- labltk-8.06.11/support/Makefile	2023-05-22 18:38:13.835528557 +0800
++++ labltk-8.06.11/support/Makefile	2023-05-24 18:26:48.305704020 +0800
+@@ -15,7 +15,7 @@
+ #######################################################################
+ 
+ include Makefile.common
+-
++CC=clang
+ all: support.cmo rawwidget.cmo widget.cmo protocol.cmo \
+      textvariable.cmo timer.cmo fileevent.cmo camltkwrap.cmo \
+      tkthread.cmo lib$(LIBNAME).$(A)
