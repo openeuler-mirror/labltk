@@ -5,7 +5,7 @@
 %endif
 Name:                ocaml-labltk
 Version:             8.06.11
-Release:             1
+Release:             2
 Summary:             Tcl/Tk interface for OCaml
 License:             LGPLv2+ with exceptions
 URL:                 https://github.com/garrigue/labltk 
@@ -13,6 +13,9 @@ Source0:             https://github.com/garrigue/labltk/archive/%{version}/lablt
 # This adds debugging (-g) everywhere.
 Patch1:              labltk-8.06.11-enable-debugging.patch
 Patch2:              add_sp.patch
+%if "%toolchain" == "clang"
+Patch3:              fix_clang_build.patch
+%endif
 BuildRequires:       ocaml tcl-devel tk-devel
 %description
 labltk or mlTk is a library for interfacing OCaml with the scripting
@@ -30,6 +33,9 @@ This package contains the development files.
 %setup -q -n labltk-%{version}
 %patch1 -p1
 %patch2 -p1
+%if "%toolchain" == "clang"
+%patch3 -p1
+%endif
 find -name .gitignore -delete
 find -type f | xargs sed -i -e 's/-warn-error/-w/g'
 
@@ -81,6 +87,9 @@ install -m 0644 camltk/*.o $RPM_BUILD_ROOT%{_libdir}/ocaml/labltk
 %{_libdir}/ocaml/labltk/*.mli
 
 %changelog
+* Wed May 24 2023 Xiang Zhang <zhangxiang@iscas.ac.cn> - 8.06.11-2
+- Fix clang build error
+
 * Fri Apr 15 2022 wangkai <wangkai385@h-partners.com> -8.06.11-1
 - update to 8.06.11
 
